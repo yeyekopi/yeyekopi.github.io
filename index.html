@@ -127,7 +127,10 @@
                                 showBanner: unityShowBanner,
                             };
 
-                            config.matchWebGLToCanvasSize = false;
+                            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                                config.matchWebGLToCanvasSize = false;
+                            }
+                            
                             loadingBar.style.display = "block";
 
                             var script = document.createElement("script");
